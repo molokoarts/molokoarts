@@ -18,7 +18,7 @@
 
     <section id="welcome-section">
         <h1>Welcome to Moloko Arts</h1>
-        <p>Hi, I'm a web developer passionate about creating beautiful and functional websites.</p>
+        <p>Hi, I'm a developer passionate about creating beautiful and functional websites</p>
     </section>
 
     <section id="projects">
@@ -55,6 +55,7 @@
         <h2>Let's work together</h2>
         <p>Feel free to reach out for collaborations or just a friendly hello</p>
         <p class="phone">Phone: 064 679 6003</p>
+        <p class="email">Email: sebushi.moloko@hotmail.com</p>
         <div class="social-links">
             <a href="https://github.com/molokoarts" target="_blank">GitHub</a>
         </div>
