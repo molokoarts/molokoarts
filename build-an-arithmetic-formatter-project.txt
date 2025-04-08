@@ -1,0 +1,132 @@
+def arithmetic_arranger(problems, show_answers=False):
+    
+    # Check if the number of problems exceeds the limit
+    if len(problems) > 5:
+        return "Error: Too many problems."
+
+    # Initialize lists to store the top row, bottom row, and dashes for each problem
+    first_operands = []
+    second_operands = []
+    operators = []
+    results = []
+
+    for problem in problems:
+       # Split the problem into two operands and the operator   
+        parts = problem.split()
+        if len(parts) != 3:
+            return "Error: Invalid problem format."
+
+          
+        first, operator, second = parts
+        
+        # Check if the operator is valid
+        if operator not in ['+', '-']:
+            return "Error: Operator must be '+' or '-'."
+        
+        # Check if operands contain only digits
+        if not first.isdigit() or not second.isdigit():
+            return "Error: Numbers must only contain digits."
+        
+        # Check if operands are more than four digits
+        if len(first) > 4 or len(second) > 4:
+            return "Error: Numbers cannot be more than four digits."
+        
+        first_operands.append(first)
+        second_operands.append(second)
+        operators.append(operator)
+        
+        # Calculate the result if show_answers is True
+        if show_answers:
+            if operator == '+':
+                result = str(int(first) + int(second))
+            else:
+                result = str(int(first) - int(second))
+            results.append(result)
+    
+    # Prepare the lines for output
+    line1 = []
+    line2 = []
+    line3 = []
+    line4 = []
+    
+    for i in range(len(problems)):
+        first = first_operands[i]
+        second = second_operands[i]
+        operator = operators[i]
+        
+        # Determine the width of the problem
+        width = max(len(first), len(second)) + 2
+        
+        # Format the first line
+        line1.append(first.rjust(width))
+        
+        # Format the second line
+        line2.append(operator + second.rjust(width - 1))
+        
+        # Format the third line (dashes)
+        line3.append('-' * width)
+        
+        # Format the fourth line (results) if show_answers is True
+        if show_answers:
+            line4.append(results[i].rjust(width))
+    
+    # Join the lines with four spaces between problems
+    arranged_problems = []
+    arranged_problems.append("    ".join(line1))
+    arranged_problems.append("    ".join(line2))
+    arranged_problems.append("    ".join(line3))
+    
+    if show_answers:
+        arranged_problems.append("    ".join(line4))
+    
+    # Combine the lines into the final output
+    return "\n".join(arranged_problems)
+    
+    # Test cases
+
+# Test 1: Regular Output without show_answers
+print(f'\n{arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])}')
+# Expected Output:
+#    32      3801      45      123
+# +  698    -    2    + 43    +  49
+# ------    ------    ----    -----
+
+# Test 2: With show_answers=True
+print(f'\n{arithmetic_arranger(["32 - 698", "1 - 3801", "45 + 43", "123 + 49", "988 + 40"], show_answers=True)}')
+# Expected Output:
+#    32         1      45      123      988
+# -  698    - 3801    + 43    +  49    +  40
+# ------    ------    ----    -----    -----
+#  -666     -3800      88      172     1028
+
+# Test 3: Invalid Operator ('/'), should return an error
+print(arithmetic_arranger(["3 / 855", "3801 - 2", "45 + 43", "123 + 49"],))
+# Expected Output: 'Error: Operator must be "+" or "-".'
+
+# Test 4: Show results with show_answers=True
+print(arithmetic_arranger(["3 + 855", "988 + 40"], True))
+# Expected Output:
+#     3      988
+# +  855    +  40
+# -----    -----
+#   858     1028
+
+# Test 5: More than 5 problems, should return an error
+print(arithmetic_arranger(["32 - 698", "1 - 3801", "45 + 43", "123 + 49", "988 + 40", "24 + 18"]))
+# Expected Output: 'Error: Too many problems.'
+
+# Test 6: Numbers greater than 4 digits, should return an error
+print(arithmetic_arranger(["24 + 85215", "3801 - 2", "45 + 43", "123 + 49"]))
+# Expected Output: 'Error: Numbers cannot be more than four digits.'
+
+# Test 7: Numbers with non-digit characters, should return an error
+print(arithmetic_arranger(["98 + 3g5", "3801 - 2", "45 + 43", "123 + 49"]))
+# Expected Output: 'Error: Numbers must only contain digits.'
+
+# Test 8: With show_answers=True and multiple problems
+print(arithmetic_arranger(["32 - 698", "1 - 3801", "45 + 43", "123 + 49", "988 + 40"], True))
+# Expected Output:
+#    32         1      45      123      988
+# -  698    - 3801    + 43    +  49    +  40
+# ------    ------    ----    -----    -----
+#  -666     -3800      88      172     1028

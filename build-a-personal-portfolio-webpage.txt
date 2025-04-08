@@ -1,0 +1,217 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moloko Arts Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <a href="#welcome-section">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a id="profile-link" href="https://github.com/molokoarts" target="_blank">GitHub</a>
+    </nav>
+
+    <section id="welcome-section">
+        <h1>Welcome to Moloko Arts</h1>
+        <p>Hi, I'm a web developer passionate about creating beautiful and functional websites.</p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-tile">
+                <a href="build-a-product-landing-page.txt" target="_blank">
+                    <img src="https://via.placeholder.com/300" alt="Product Landing Page">
+                    <h3>Product Landing Page</h3>
+                </a>
+            </div>
+            <div class="project-tile">
+                <a href="build-a-survey-form.txt" target="_blank">
+                    <img src="https://via.placeholder.com/300" alt="Survey Form">
+                    <h3>Survey Form</h3>
+                </a>
+            </div>
+            <div class="project-tile">
+                <a href="build-a-technical-documentation-page.txt" target="_blank">
+                    <img src="https://via.placeholder.com/300" alt="Technical Documentation">
+                    <h3>Technical Documentation</h3>
+                </a>
+            </div>
+            <div class="project-tile">
+                <a href="build-a-tribute-page.txt" target="_blank">
+                    <img src="https://via.placeholder.com/300" alt="Tribute Page">
+                    <h3>Tribute Page</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Let's work together</h2>
+        <p>Feel free to reach out for collaborations or just a friendly hello</p>
+        <p class="phone">Phone: 064 679 6003</p>
+        <div class="social-links">
+            <a href="https://github.com/molokoarts" target="_blank">GitHub</a>
+        </div>
+    </section>
+</body>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+    background-color: white;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #0066cc; /* Blue color */
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+#navbar a:hover {
+    color: #cce6ff; /* Lighter blue */
+}
+
+#welcome-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    color: #0066cc; /* Blue text */
+}
+
+#welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#projects {
+    padding: 4rem 2rem;
+    background-color: #f0f8ff; /* Very light blue */
+    color: #0066cc; /* Blue text */
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-tile {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border: 2px solid #0066cc; /* Blue border */
+}
+
+.project-tile:hover {
+    transform: translateY(-10px);
+}
+
+.project-tile img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-tile h3 {
+    padding: 1rem;
+    text-align: center;
+    color: #0066cc; /* Blue text */
+}
+
+.project-tile a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#contact {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #0066cc; /* Blue background */
+    color: white;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.phone {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #cce6ff; /* Lighter blue */
+}
+
+@media (max-width: 768px) {
+    #navbar {
+        justify-content: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #welcome-section h1 {
+        font-size: 2rem;
+    }
+}
+
+** end of undefined **
+

@@ -1,0 +1,341 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Headphones | SonicWave Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <div class="logo-container">
+            <img id="header-img" src="https://example.com/logo.png" alt="SonicWave Pro Logo">
+            <h1>SonicWave Pro</h1>
+        </div>
+        <nav id="nav-bar">
+            <a class="nav-link" href="#features">Features</a>
+            <a class="nav-link" href="#how-it-works">How It Works</a>
+            <a class="nav-link" href="#pricing">Pricing</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Premium Wireless Headphones</h2>
+            <form id="form" action="https://www.freecodecamp.com/email-submit" method="post">
+                <input id="email" type="email" name="email" placeholder="Enter your email address" required>
+                <input id="submit" type="submit" value="Get Started">
+            </form>
+        </section>
+
+        <section id="features" class="features">
+            <div class="feature">
+                <div class="icon">🎵</div>
+                <div class="description">
+                    <h3>Premium Sound Quality</h3>
+                    <p>Experience crystal clear highs and deep, powerful bass with our advanced acoustic technology.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">🔋</div>
+                <div class="description">
+                    <h3>30-Hour Battery Life</h3>
+                    <p>Enjoy all-day listening with our industry-leading battery performance.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">🌍</div>
+                <div class="description">
+                    <h3>Active Noise Cancelling</h3>
+                    <p>Block out the world with our advanced noise cancellation technology.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="video-section">
+            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        </section>
+
+        <section id="pricing" class="pricing">
+            <div class="product-card">
+                <h3>Standard</h3>
+                <p class="price">$199</p>
+                <ul>
+                    <li>Premium sound</li>
+                    <li>20-hour battery</li>
+                    <li>Basic noise cancelling</li>
+                </ul>
+                <button>Select</button>
+            </div>
+            <div class="product-card">
+                <h3>Pro</h3>
+                <p class="price">$299</p>
+                <ul>
+                    <li>Enhanced sound</li>
+                    <li>30-hour battery</li>
+                    <li>Advanced noise cancelling</li>
+                </ul>
+                <button>Select</button>
+            </div>
+            <div class="product-card">
+                <h3>Elite</h3>
+                <p class="price">$399</p>
+                <ul>
+                    <li>Studio-quality sound</li>
+                    <li>40-hour battery</li>
+                    <li>Adaptive noise cancelling</li>
+                    <li>Wireless charging</li>
+                </ul>
+                <button>Select</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 SonicWave Pro. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#header-img {
+    height: 40px;
+    width: auto;
+}
+
+#nav-bar {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #0066cc;
+}
+
+main {
+    margin-top: 80px;
+    padding: 2rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #0066cc, #004080);
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#email {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#submit {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit:hover {
+    background-color: #e65c00;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.feature {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.icon {
+    font-size: 2.5rem;
+}
+
+.description h3 {
+    margin-bottom: 0.5rem;
+    color: #0066cc;
+}
+
+.video-section {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+#video {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.pricing {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 3rem 0;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.product-card h3 {
+    color: #0066cc;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.product-card ul {
+    list-style: none;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.product-card ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.product-card ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #0066cc;
+}
+
+.product-card button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.product-card button:hover {
+    background-color: #004080;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+}
+
+/* Media Query for Responsive Design */
+@media only screen and (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    #nav-bar {
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    .pricing {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
+
+** end of undefined **
+

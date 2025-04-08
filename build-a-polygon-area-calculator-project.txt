@@ -1,0 +1,138 @@
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def set_width(self, width):
+        self.width = width
+
+    def set_height(self, height):
+        self.height = height
+
+    def get_area(self):
+        return self.width * self.height
+
+    def get_perimeter(self):
+        return 2 * (self.width + self.height)
+
+    def get_diagonal(self):
+        return (self.width**2 + self.height**2) ** 0.5
+
+    def get_picture(self):
+        if self.width > 50 or self.height > 50:
+            return "Too big for picture."
+        picture = ("*" * self.width + "\n") * self.height
+        return picture
+
+    def get_amount_inside(self, shape):
+        return (self.width // shape.width) * (self.height // shape.height)
+
+    def __str__(self):
+        return f"Rectangle(width={self.width}, height={self.height})"
+
+
+class Square(Rectangle):
+    def __init__(self, side):
+        super().__init__(side, side)  # Initialize Rectangle with side as width and height
+
+    def set_side(self, side):
+        self.width = side
+        self.height = side
+
+    def set_width(self, width):
+        self.set_side(width)
+
+    def set_height(self, height):
+        self.set_side(height)
+
+    def __str__(self):
+        return f"Square(side={self.width})"
+
+
+# Tests
+def run_tests():
+    # Test 1: Square is a subclass of Rectangle
+    assert issubclass(Square, Rectangle), "Square should be a subclass of Rectangle"
+
+    # Test 2: Square is a distinct class from Rectangle
+    assert Square is not Rectangle, "Square should be a distinct class from Rectangle"
+
+    # Test 3: A square object is an instance of Square and Rectangle
+    square = Square(5)
+    assert isinstance(square, Square), "Square object should be an instance of Square"
+    assert isinstance(square, Rectangle), "Square object should be an instance of Rectangle"
+
+    # Test 4: String representation of Rectangle(3, 6)
+    rectangle = Rectangle(3, 6)
+    assert str(rectangle) == "Rectangle(width=3, height=6)", "Incorrect string representation for Rectangle"
+
+    # Test 5: String representation of Square(5)
+    assert str(square) == "Square(side=5)", "Incorrect string representation for Square"
+
+    # Test 6: Rectangle(3, 6).get_area()
+    assert rectangle.get_area() == 18, "Incorrect area for Rectangle"
+
+    # Test 7: Square(5).get_area()
+    assert square.get_area() == 25, "Incorrect area for Square"
+
+    # Test 8: Rectangle(3, 6).get_perimeter()
+    assert rectangle.get_perimeter() == 18, "Incorrect perimeter for Rectangle"
+
+    # Test 9: Square(5).get_perimeter()
+    assert square.get_perimeter() == 20, "Incorrect perimeter for Square"
+
+    # Test 10: Rectangle(3, 6).get_diagonal()
+    assert rectangle.get_diagonal() == 6.708203932499369, "Incorrect diagonal for Rectangle"
+
+    # Test 11: Square(5).get_diagonal()
+    assert square.get_diagonal() == 7.0710678118654755, "Incorrect diagonal for Square"
+
+    # Test 12: Rectangle string representation after setting new values
+    rectangle.set_width(4)
+    rectangle.set_height(8)
+    assert str(rectangle) == "Rectangle(width=4, height=8)", "Incorrect string representation after setting new values"
+
+    # Test 13: Square string representation after setting new values using set_side
+    square.set_side(9)
+    assert str(square) == "Square(side=9)", "Incorrect string representation after setting new side"
+
+    # Test 14: Square string representation after setting new values using set_width or set_height
+    square.set_width(10)
+    assert str(square) == "Square(side=10)", "Incorrect string representation after setting width"
+    square.set_height(11)
+    assert str(square) == "Square(side=11)", "Incorrect string representation after setting height"
+
+    # Test 15: Rectangle.get_picture()
+    rectangle.set_width(4)
+    rectangle.set_height(3)
+    assert rectangle.get_picture() == "****\n****\n****\n", "Incorrect picture for Rectangle"
+
+    # Test 16: Square.get_picture()
+    square.set_side(2)
+    assert square.get_picture() == "**\n**\n", "Incorrect picture for Square"
+
+    # Test 17: get_picture() returns 'Too big for picture.' for large dimensions
+    rectangle.set_width(51)
+    rectangle.set_height(3)
+    assert rectangle.get_picture() == "Too big for picture.", "Incorrect handling of large dimensions"
+
+    # Test 18: Rectangle(15, 10).get_amount_inside(Square(5))
+    rectangle = Rectangle(15, 10)
+    square = Square(5)
+    assert rectangle.get_amount_inside(square) == 6, "Incorrect number of squares inside rectangle"
+
+    # Test 19: Rectangle(4, 8).get_amount_inside(Rectangle(3, 6))
+    rectangle1 = Rectangle(4, 8)
+    rectangle2 = Rectangle(3, 6)
+    assert rectangle1.get_amount_inside(rectangle2) == 1, "Incorrect number of rectangles inside rectangle"
+
+    # Test 20: Rectangle(2, 3).get_amount_inside(Rectangle(3, 6))
+    rectangle1 = Rectangle(2, 3)
+    rectangle2 = Rectangle(3, 6)
+    assert rectangle1.get_amount_inside(rectangle2) == 0, "Incorrect number of rectangles inside rectangle"
+
+    print("All tests passed!")
+
+
+# Run the tests
+run_tests()

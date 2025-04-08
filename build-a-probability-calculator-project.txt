@@ -1,0 +1,77 @@
+import copy
+import random
+
+class Hat:
+    def __init__(self, **balls):
+        """
+        Initialize the hat with balls of different colors.
+        Arguments:
+            **balls: A variable number of keyword arguments specifying the number of balls of each color.
+        """
+        self.contents = []
+        for color, count in balls.items():
+            self.contents.extend([color] * count)
+
+    def draw(self, num_balls):
+        """
+        Draw a specified number of balls from the hat without replacement.
+        If the number of balls to draw exceeds the available quantity, return all the balls.
+        Arguments:
+            num_balls: The number of balls to draw.
+        Returns:
+            A list of drawn balls.
+        """
+        if num_balls >= len(self.contents):
+            drawn_balls = self.contents.copy()  # Return all balls
+            self.contents.clear()  # Empty the hat
+        else:
+            drawn_balls = random.sample(self.contents, num_balls)
+            for ball in drawn_balls:
+                self.contents.remove(ball)  # Remove drawn balls from the hat
+        return drawn_balls
+
+def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
+    """
+    Perform experiments to estimate the probability of drawing a specific combination of balls.
+    Arguments:
+        hat: A Hat object.
+        expected_balls: A dictionary specifying the exact group of balls to attempt to draw.
+        num_balls_drawn: The number of balls to draw in each experiment.
+        num_experiments: The number of experiments to perform.
+    Returns:
+        The estimated probability.
+    """
+    success_count = 0
+
+    for _ in range(num_experiments):
+        # Create a copy of the hat for each experiment
+        hat_copy = Hat()
+        hat_copy.contents = hat.contents.copy()
+        
+        # Draw balls
+        drawn_balls = hat_copy.draw(num_balls_drawn)
+        
+        # Check if the drawn balls match the expected_balls
+        match = True
+        for color, count in expected_balls.items():
+            if drawn_balls.count(color) < count:
+                match = False
+                break
+        
+        if match:
+            success_count += 1
+
+    # Calculate the probability
+    probability = success_count / num_experiments
+    return probability
+
+# Example usage
+hat = Hat(black=6, red=4, green=3)
+probability = experiment(
+    hat=hat,
+    expected_balls={'red': 2, 'green': 1},
+    num_balls_drawn=5,
+    num_experiments=2000
+)
+
+print(f"Estimated Probability: {probability:.4f}")

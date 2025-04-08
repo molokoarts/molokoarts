@@ -1,0 +1,180 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Documentation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <header>Documentation Topics</header>
+    <a href="#Introduction" class="nav-link">Introduction</a>
+    <a href="#JavaScript_and_Java" class="nav-link">JavaScript and Java</a>
+    <a href="#Variables" class="nav-link">Variables</a>
+    <a href="#Functions" class="nav-link">Functions</a>
+    <a href="#Loops" class="nav-link">Loops</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-doc">
+    <!-- Section 1: Introduction -->
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>This is the introduction section. It provides an overview of the documentation.</p>
+      <p>Here is some more information about the topic.</p>
+      <code>console.log("Hello, World!");</code>
+      <ul>
+        <li>Overview</li>
+        <li>Getting Started</li>
+      </ul>
+    </section>
+
+    <!-- Section 2: JavaScript and Java -->
+    <section class="main-section" id="JavaScript_and_Java">
+      <header>JavaScript and Java</header>
+      <p>This section compares JavaScript and Java.</p>
+      <p>Both languages are widely used but serve different purposes.</p>
+      <code>let x = 10;</code>
+      <ul>
+        <li>JavaScript Basics</li>
+        <li>Java Basics</li>
+      </ul>
+    </section>
+
+    <!-- Section 3: Variables -->
+    <section class="main-section" id="Variables">
+      <header>Variables</header>
+      <p>Variables are used to store data in programming.</p>
+      <p>In JavaScript, you can declare variables using <code>let</code>, <code>const</code>, or <code>var</code>.</p>
+      <code>const PI = 3.14;</code>
+      <ul>
+        <li>Variable Declaration</li>
+        <li>Variable Scope</li>
+      </ul>
+    </section>
+
+    <!-- Section 4: Functions -->
+    <section class="main-section" id="Functions">
+      <header>Functions</header>
+      <p>Functions are reusable blocks of code.</p>
+      <p>They can take parameters and return values.</p>
+      <code>function add(a, b) { return a + b; }</code>
+      <ul>
+        <li>Function Declaration</li>
+        <li>Arrow Functions</li>
+      </ul>
+    </section>
+
+    <!-- Section 5: Loops -->
+    <section class="main-section" id="Loops">
+      <header>Loops</header>
+      <p>Loops allow you to repeat a block of code multiple times.</p>
+      <p>Common loops include <code>for</code>, <code>while</code>, and <code>do...while</code>.</p>
+      <code>for (let i = 0; i < 5; i++) { console.log(i); }</code>
+      <ul>
+        <li>For Loop</li>
+        <li>While Loop</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* Navbar Styles */
+#navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #f4f4f4;
+  border-right: 2px solid #ccc;
+  padding: 20px;
+}
+
+#navbar header {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-link:hover {
+  background-color: #ddd;
+}
+
+/* Main Content Styles */
+#main-doc {
+  margin-left: 290px;
+  padding: 20px;
+}
+
+.main-section {
+  margin-bottom: 40px;
+}
+
+.main-section header {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+code {
+  display: block;
+  background-color: #f4f4f4;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  #navbar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 2px solid #ccc;
+  }
+
+  #main-doc {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
+
+** end of undefined **
+
